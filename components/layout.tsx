@@ -5,16 +5,16 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Miguel López';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Next.js Sample with TypeScript';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: { children: React.ReactNode, home?: boolean }) {
     return (
         <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
-                    content="Learn how to build a personal website using Next.js"
+                    content="Learn how to build a personal website using Next.js and TypeScript"
                 />
                 <meta
                     property="og:image"

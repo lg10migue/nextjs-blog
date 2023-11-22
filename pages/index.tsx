@@ -4,15 +4,16 @@ import Layout, { siteTitle } from '../components/layout';
 import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
+import { GetStaticProps } from 'next';
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
     const allPostsData = getSortedPostsData();
     return {
         props: {
             allPostsData,
         },
     };
-};
+}) satisfies GetStaticProps;
 
 export default function Home({ allPostsData }) {
     return (
@@ -21,7 +22,7 @@ export default function Home({ allPostsData }) {
                 <title>{siteTitle}</title>
             </Head>
             <section className={utilStyles.headingMd}>
-                <p>Hello, I'm Miguel. I'm a Software Engineer learning NextJS. I really love to play soccer⚽!</p>
+                <p>Hello, I'm Miguel. I'm a Software Engineer learning NextJS with TypeScript. I really love to play soccer⚽!</p>
                 <p>
                     (This is a sample website - you’ll be building a site like this on{' '}
                     <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
